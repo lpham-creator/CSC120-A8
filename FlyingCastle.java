@@ -102,7 +102,7 @@ public class FlyingCastle implements Contract {
    * @return false.
    */
   public boolean walk(String direction) {
-    String action = "You can't walk in the air.";
+    String action = "You can't walk in the air, duh.";
     addToHistory(action);
     System.out.println(action);
     return false;
