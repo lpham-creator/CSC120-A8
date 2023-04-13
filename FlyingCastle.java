@@ -48,7 +48,6 @@ public class FlyingCastle implements Contract {
    * @return The item that was dropped.
    * @throws RuntimeException If the item is not in the user's possession.
    */
-  @Override
   public String drop(String item) {
     if (items.contains(item)) {
       items.remove(item);
@@ -67,7 +66,6 @@ public class FlyingCastle implements Contract {
    * @param item The item to examine.
    * @throws RuntimeException If the item is not in the user's possession.
    */
-  @Override
   public void examine(String item) {
     if (items.contains(item)) {
       String action = "You examined the " + item + ".";
@@ -84,7 +82,6 @@ public class FlyingCastle implements Contract {
    * @param item The item to use.
    * @throws RuntimeException If the item is not in the user's possession.
    */
-  @Override
   public void use(String item) {
     if (items.contains(item)) {
       String action = "You used the " + item + ".";
@@ -133,14 +130,14 @@ public class FlyingCastle implements Contract {
    * @return 0;
    */
   public Number shrink() {
-    if (this.size.intValue() <= 0){
-        throw new RuntimeException("The castle cannot shrink right now.");
+    if (this.size.intValue() <= 0) {
+      throw new RuntimeException("The castle cannot shrink right now.");
     } else {
-        this.size = this.size.intValue() - 10;
-        String action = "You shrink the castle. Hiding from somebody?";
-        addToHistory(action);
-        System.out.println(action);
-        return 0;
+      this.size = this.size.intValue() - 10;
+      String action = "You shrink the castle. Hiding from somebody?";
+      addToHistory(action);
+      System.out.println(action);
+      return 0;
     }
   }
 
